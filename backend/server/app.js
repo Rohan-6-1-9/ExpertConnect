@@ -10,12 +10,11 @@ const app = express();
 // ── CORS ──
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN || "http://localhost:3000",
-    methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    credentials: true,
   })
-);
-
+)
 // ── Body Parsers ──
 app.use(express.json({ limit: "10kb" }));
 app.use(express.urlencoded({ extended: true }));
