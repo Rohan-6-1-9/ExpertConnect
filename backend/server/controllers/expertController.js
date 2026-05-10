@@ -51,9 +51,14 @@ if (sortBy === "price-high") {
   sortOption.sessionRate = -1;
 }
 
-if (sortBy === "rating") {
+if (sortBy === "top-rated") {
   sortOption.rating = -1;
 }
+
+if (sortBy === "newest") {
+  sortOption.createdAt = -1;
+}
+
   const experts = await Expert.find(filter)
   .sort(sortOption)
   .select("-__v")
