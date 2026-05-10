@@ -9,7 +9,7 @@ Users can browse experts, check live slot availability, and book consultation se
 ## 🚀 Live Demo
 
 ### Frontend
-[Live Frontend URL](https://expert-booking-system-git-main-rohan-6-1-9s-projects.vercel.app/)
+[Live Frontend URL](expert-booking-system-chi.vercel.app)
 
 ### Backend API
 [Live Backend API](https://expert-booking-system-w91b.onrender.com)
