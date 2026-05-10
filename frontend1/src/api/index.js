@@ -59,7 +59,11 @@ export const bookingsApi = {
   getById: (id) => api.get(`/bookings/${id}`),
 
   /** PATCH /api/bookings/:id/cancel */
-  cancel: (id) => api.patch(`/bookings/${id}/cancel`),
+    /** PATCH /api/bookings/:id/status */
+  cancel: (id) =>
+    api.patch(`/bookings/${id}/status`, {
+      status: 'cancelled',
+    }),
 }
 
 export default api
