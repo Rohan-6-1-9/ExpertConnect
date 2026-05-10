@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const INITIAL_FILTERS = {
   search: '',
   category: '',
-  sortBy: 'rating',
+  sortBy: 'top-rated',
   minPrice: undefined,
   maxPrice: undefined,
   page: 1,
