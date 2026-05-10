@@ -72,30 +72,40 @@ export default function SlotPicker({ slots, loading, selectedDate, onDateChange,
         ) : (
           <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
             {slots.map(slot => {
-              const slotId = slot._id || slot.id
-              const isBooked = slot.status === 'booked'
-              const isSelected = selectedSlot === slotId
-              return (
-                <button
-                  key={slotId}
-                  disabled={isBooked}
-                  onClick={() => onSlotSelect(isSelected ? null : slotId)}
-                  className={cn(
-                    'relative px-2 py-2.5 rounded-lg text-xs font-mono font-medium border transition-all duration-200 text-center',
-                    isBooked
-                      ? 'bg-ink-50 text-ink-300 border-ink-100 cursor-not-allowed line-through'
-                      : isSelected
-                        ? 'bg-ink-900 text-white border-ink-900 shadow-sm'
-                        : 'bg-white text-ink-700 border-ink-200 hover:border-gold-400 hover:bg-gold-50'
-                  )}
-                >
-                  {slot.time || slot.startTime}
-                  {isBooked && (
-                    <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-rose-400 rounded-full border-2 border-white" />
-                  )}
-                </button>
-              )
-            })}
+  const slotId = slot._id || slot.id
+
+  const isBooked =
+    slot.isBooked === true ||
+    slot.status === 'booked'
+
+  const isSelected = selectedSlot === slotId
+
+  return (
+    <button
+      key={slotId}
+      disabled={isBooked}
+      onClick={() => {
+        if (!isBooked) {
+          onSlotSelect(isSelected ? null : slotId)
+        }
+      }}
+      className={cn(
+        'relative px-2 py-2.5 rounded-lg text-xs font-mono font-medium border transition-all duration-200 text-center',
+        isBooked
+          ? 'bg-ink-50 text-ink-300 border-ink-100 cursor-not-allowed line-through'
+          : isSelected
+            ? 'bg-ink-900 text-white border-ink-900 shadow-sm'
+            : 'bg-white text-ink-700 border-ink-200 hover:border-gold-400 hover:bg-gold-50'
+      )}
+    >
+      {slot.time || slot.startTime}
+
+      {isBooked && (
+        <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-rose-400 rounded-full border-2 border-white" />
+      )}
+    </button>
+  )
+})}
           </div>
         )}
 
