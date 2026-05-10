@@ -70,8 +70,20 @@ export function debounce(fn, delay = 300) {
 }
 
 export const SORT_OPTIONS = [
-  { value: 'rating',    label: 'Top Rated' },
-  { value: 'price_asc', label: 'Price: Low to High' },
-  { value: 'price_desc',label: 'Price: High to Low' },
-  { value: 'newest',    label: 'Newest' },
+  {
+    value: 'top-rated',
+    label: 'Top Rated',
+  },
+  {
+    value: 'price-low',
+    label: 'Price: Low to High',
+  },
+  {
+    value: 'price-high',
+    label: 'Price: High to Low',
+  },
+  {
+    value: 'newest',
+    label: 'Newest',
+  },
 ]

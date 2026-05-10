@@ -38,7 +38,7 @@ export default function SearchAndFilter({ filters, onChange, categories = [], lo
 
   function clearAll() {
     setLocalSearch('')
-    onChange({ search: '', category: '', sortBy: 'rating', minPrice: undefined, maxPrice: undefined, page: 1 })
+    onChange({ search: '', category: '', sortBy: 'top-rated', minPrice: undefined, maxPrice: undefined, page: 1 })
   }
 
   const hasFilters = filters.search || filters.category || filters.minPrice || filters.maxPrice
@@ -67,7 +67,7 @@ export default function SearchAndFilter({ filters, onChange, categories = [], lo
 
         {/* Sort */}
         <select
-          value={filters.sortBy || 'rating'}
+          value={filters.sortBy || 'top-rated'}
           onChange={handleSort}
           className="input-field w-auto min-w-[160px] cursor-pointer"
         >
