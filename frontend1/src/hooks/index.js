@@ -74,7 +74,7 @@ export function useExpertDetail(id) {
     setLoading(true)
     setError(null)
     expertsApi.getById(id)
-      .then(res => setExpert(res.data?.expert || res.data))
+      .then(res => setExpert(res.data?.data || null))
       .catch(err => setError(err.message))
       .finally(() => setLoading(false))
   }, [id])
