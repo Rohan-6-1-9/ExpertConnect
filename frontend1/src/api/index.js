@@ -3,7 +3,7 @@ import axios from 'axios'
 // ─── Axios Instance ──────────────────────────────────────────────────────────
 const api = axios.create({
   baseURL: 'https://expert-booking-system-w91b.onrender.com/api',
-  timeout: 15000,
+  timeout: 60000,
   headers: {
     'Content-Type': 'application/json',
   },
