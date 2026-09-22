@@ -28,7 +28,7 @@ const expertsData = [
     profileImage: "https://ui-avatars.com/api/?name=Priya+Sharma&background=6366f1&color=fff",
     rating: 4.9,
     sessionRate: 120,
-    availableSlots: generateSlots(7, ["09:00", "11:00", "15:00"]),
+    availableSlots: generateSlots(30, ["09:00", "11:00", "15:00"]),
   },
   {
     name: "Arjun Mehta",
@@ -38,7 +38,7 @@ const expertsData = [
     profileImage: "https://ui-avatars.com/api/?name=Arjun+Mehta&background=10b981&color=fff",
     rating: 4.7,
     sessionRate: 90,
-    availableSlots: generateSlots(7, ["10:00", "14:00", "16:00"]),
+    availableSlots: generateSlots(30, ["10:00", "14:00", "16:00"]),
   },
   {
     name: "Sarah Chen",
@@ -48,7 +48,7 @@ const expertsData = [
     profileImage: "https://ui-avatars.com/api/?name=Sarah+Chen&background=f59e0b&color=fff",
     rating: 4.8,
     sessionRate: 150,
-    availableSlots: generateSlots(7, ["09:00", "13:00", "17:00"]),
+    availableSlots: generateSlots(30, ["09:00", "13:00", "17:00"]),
   },
   {
     name: "Mohammed Al-Rashid",
@@ -58,7 +58,7 @@ const expertsData = [
     profileImage: "https://ui-avatars.com/api/?name=Mohammed+Al-Rashid&background=ef4444&color=fff",
     rating: 4.6,
     sessionRate: 110,
-    availableSlots: generateSlots(7, ["11:00", "14:00", "16:00"]),
+    availableSlots: generateSlots(30, ["11:00", "14:00", "16:00"]),
   },
   {
     name: "Lena Hoffmann",
@@ -68,7 +68,7 @@ const expertsData = [
     profileImage: "https://ui-avatars.com/api/?name=Lena+Hoffmann&background=8b5cf6&color=fff",
     rating: 4.9,
     sessionRate: 100,
-    availableSlots: generateSlots(7, ["10:00", "12:00", "15:00"]),
+    availableSlots: generateSlots(30, ["10:00", "12:00", "15:00"]),
   },
   {
   name: "Emily Rodriguez",
@@ -78,7 +78,7 @@ const expertsData = [
   profileImage: "https://ui-avatars.com/api/?name=Emily+Rodriguez&background=0ea5e9&color=fff",
   rating: 4.8,
   sessionRate: 130,
-  availableSlots: generateSlots(7, ["09:00", "12:00", "15:00"]),
+  availableSlots: generateSlots(30, ["09:00", "12:00", "15:00"]),
 },
 {
   name: "David Kim",
@@ -88,7 +88,7 @@ const expertsData = [
   profileImage: "https://ui-avatars.com/api/?name=David+Kim&background=14b8a6&color=fff",
   rating: 4.7,
   sessionRate: 115,
-  availableSlots: generateSlots(7, ["10:00", "13:00", "17:00"]),
+  availableSlots: generateSlots(30, ["10:00", "13:00", "17:00"]),
 },
 {
   name: "Sophia Martinez",
@@ -98,7 +98,7 @@ const expertsData = [
   profileImage: "https://ui-avatars.com/api/?name=Sophia+Martinez&background=f97316&color=fff",
   rating: 4.9,
   sessionRate: 95,
-  availableSlots: generateSlots(7, ["11:00", "14:00", "16:00"]),
+  availableSlots: generateSlots(30, ["11:00", "14:00", "16:00"]),
 },
 {
   name: "James Anderson",
@@ -108,7 +108,7 @@ const expertsData = [
   profileImage: "https://ui-avatars.com/api/?name=James+Anderson&background=6366f1&color=fff",
   rating: 4.6,
   sessionRate: 140,
-  availableSlots: generateSlots(7, ["09:00", "13:00", "18:00"]),
+  availableSlots: generateSlots(30, ["09:00", "13:00", "18:00"]),
 },
 {
   name: "Olivia Brown",
@@ -118,7 +118,7 @@ const expertsData = [
   profileImage: "https://ui-avatars.com/api/?name=Olivia+Brown&background=ec4899&color=fff",
   rating: 4.9,
   sessionRate: 85,
-  availableSlots: generateSlots(7, ["08:00", "12:00", "15:00"]),
+  availableSlots: generateSlots(30, ["08:00", "12:00", "15:00"]),
 },
 {
   name: "Daniel Lee",
@@ -128,7 +128,7 @@ const expertsData = [
   profileImage: "https://ui-avatars.com/api/?name=Daniel+Lee&background=22c55e&color=fff",
   rating: 4.8,
   sessionRate: 125,
-  availableSlots: generateSlots(7, ["10:00", "14:00", "19:00"]),
+  availableSlots: generateSlots(30, ["10:00", "14:00", "19:00"]),
 },
 {
   name: "Ava Wilson",
@@ -138,7 +138,7 @@ const expertsData = [
   profileImage: "https://ui-avatars.com/api/?name=Ava+Wilson&background=a855f7&color=fff",
   rating: 4.7,
   sessionRate: 105,
-  availableSlots: generateSlots(7, ["09:00", "11:00", "16:00"]),
+  availableSlots: generateSlots(30, ["09:00", "11:00", "16:00"]),
 },
 {
   name: "Michael Johnson",
@@ -148,7 +148,7 @@ const expertsData = [
   profileImage: "https://ui-avatars.com/api/?name=Michael+Johnson&background=3b82f6&color=fff",
   rating: 4.8,
   sessionRate: 145,
-  availableSlots: generateSlots(7, ["08:00", "13:00", "17:00"]),
+  availableSlots: generateSlots(30, ["08:00", "13:00", "17:00"]),
 },
 {
   name: "Isabella Thomas",
@@ -158,7 +158,7 @@ const expertsData = [
   profileImage: "https://ui-avatars.com/api/?name=Isabella+Thomas&background=e11d48&color=fff",
   rating: 4.9,
   sessionRate: 150,
-  availableSlots: generateSlots(7, ["10:00", "12:00", "18:00"]),
+  availableSlots: generateSlots(30, ["10:00", "12:00", "18:00"]),
 },
 {
   name: "Ethan Walker",
@@ -168,7 +168,7 @@ const expertsData = [
   profileImage: "https://ui-avatars.com/api/?name=Ethan+Walker&background=0f172a&color=fff",
   rating: 4.7,
   sessionRate: 135,
-  availableSlots: generateSlots(7, ["11:00", "15:00", "19:00"]),
+  availableSlots: generateSlots(30, ["11:00", "15:00", "19:00"]),
 },
 ];
 
