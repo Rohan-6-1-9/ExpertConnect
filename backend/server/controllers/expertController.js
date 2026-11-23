@@ -132,7 +132,7 @@ const getExpertById = asyncHandler(async (req, res) => {
 // ─────────────────────────────────────
 // GET /experts/:id/slots
 // ─────────────────────────────────────
-const getExpertSlots = asyncHandler(async (req, res) => {
+/* const getExpertSlots = asyncHandler(async (req, res) => {
   const expert = await Expert.findById(req.params.id);
 
   if (!expert) {
@@ -160,7 +160,49 @@ const getExpertSlots = asyncHandler(async (req, res) => {
     success: true,
     slots: formattedSlots,
   });
+}); */
+
+const getExpertSlots = asyncHandler(async (req, res) => {
+  const expert = await Expert.findById(req.params.id);
+
+  if (!expert) {
+    throw new AppError("Expert not found", 404);
+  }
+
+  const { date } = req.query;
+
+  // Debugging logs
+  console.log("Expert:", expert.name);
+  console.log("Requested date:", date);
+
+  console.log(
+    "Stored slot dates:",
+    [...new Set(expert.availableSlots.map(slot => slot.date))]
+  );
+
+  let slots = expert.availableSlots || [];
+
+  if (date) {
+    slots = slots.filter(
+      (slot) => slot.date === date
+    );
+  }
+
+  console.log("Matching slots found:", slots.length);
+
+  const formattedSlots = slots.map((slot) => ({
+    ...slot.toObject(),
+    isBooked:
+      slot.isBooked === true ||
+      slot.status === "booked",
+  }));
+
+  res.status(200).json({
+    success: true,
+    slots: formattedSlots,
+  });
 });
+
 
 module.exports = {
   getAllExperts,

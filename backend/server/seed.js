@@ -5,7 +5,7 @@ const Booking = require("./models/Booking");
 const connectDB = require("./config/db");
 
 // ── Helper: generate slots for the next N days ──
-const generateSlots = (daysAhead = 7, times = ["09:00", "11:00", "14:00", "16:00"]) => {
+/* const generateSlots = (daysAhead = 7, times = ["09:00", "11:00", "14:00", "16:00"]) => {
   const slots = [];
   for (let d = 1; d <= daysAhead; d++) {
     const date = new Date();
@@ -16,6 +16,35 @@ const generateSlots = (daysAhead = 7, times = ["09:00", "11:00", "14:00", "16:00
       slots.push({ date: dateStr, time, isBooked: false });
     });
   }
+  return slots;
+}; */
+
+const generateSlots = (
+  daysAhead = 30,
+  times = ["09:00", "11:00", "14:00", "16:00"]
+) => {
+  const slots = [];
+  const today = new Date();
+
+  for (let d = 1; d <= daysAhead; d++) {
+    const date = new Date(today);
+    date.setDate(today.getDate() + d);
+
+    const dateStr = [
+      date.getFullYear(),
+      String(date.getMonth() + 1).padStart(2, "0"),
+      String(date.getDate()).padStart(2, "0"),
+    ].join("-");
+
+    times.forEach((time) => {
+      slots.push({
+        date: dateStr,
+        time,
+        isBooked: false,
+      });
+    });
+  }
+
   return slots;
 };
 
